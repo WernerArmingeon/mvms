@@ -7,5 +7,4 @@ export BOOT=$MVMS/boot
 export ROOTFS=$MVMS/root
 
 export BRANCH=mvms-d3
-export IMAGE=core-image-minimal
-
+export TARGET=core-image-minimal
