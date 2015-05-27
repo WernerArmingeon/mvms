@@ -1,15 +1,8 @@
 #! /bin/sh
 
-source `dirname $0`/setup
-
 mkdir -p $MVMS
 mkdir -p $BOOT
 mkdir -p $ROOTFS
-
-mkdir -p $MVMS/config
-
-BRANCH=mvms-d3
-IMAGE=core-image-minimal
 
 cd $MVMS
 
@@ -32,8 +25,8 @@ cd meta-atmel
 git checkout origin/dizzy -b $BRANCH
 cd ..
 
-echo # source oe-init-build-env build-$BRANCH
-echo # bitbake $IMAGE
+set >vars-before
+source oe-init-build-env build-$BRANCH
+set >vars-after
 
-echo $BRANCH >$MVMS/config/branch
-echo $IMAGE  >$MVMS/config/image
+echo # bitbake $IMAGE

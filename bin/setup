@@ -1,7 +1,11 @@
 #! /bin/sh
 
-export MVMS=/data/mvms
+export MVMS=$PWD
 
 export POKY=$MVMS/poky
 export BOOT=$MVMS/boot
 export ROOTFS=$MVMS/root
+
+export BRANCH=mvms-d3
+export IMAGE=core-image-minimal
+
