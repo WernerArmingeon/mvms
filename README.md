@@ -21,9 +21,10 @@ checkout repositories ( poky, meta-openembedded, meta-atmel ) to $BRANCH
 #### usage example
 
 ```
-mkdir /data/mvms
-cd /data/mvms
+cd /data
 git clone https://github.com/WernerArmingeon/mvms.git
+cd mvms
+
 . bin/setup
 
 bin/getyocto
