@@ -28,7 +28,13 @@ cd mvms
 . bin/setup
 
 bin/getyocto
+
+# make yocto: build kernel-image, device tree, root filesystem
+# init environment 
+source oe-init-build-env build-$BRANCH
+# creates directory build-$BRANCH, must be patched
+
+# later only once called in one session:
 source oe-init-build-env build-$BRANCH
 bitbake $TARGET
 ```
-
