@@ -2,7 +2,7 @@
 
 ####bin
 #####bin/setup
-defines environment vars: MVMS ( = $PWD ), POKY, BOOT, ROOTFS, BRANCH, IMAGE
+defines environment vars: MVMS ( = $PWD ), POKY, BOOT, ROOTFS, BRANCH, TARGET
 
 #####bin/getyocto
 clone repositories:
@@ -28,8 +28,7 @@ cd mvms
 . bin/setup
 
 bin/getyocto
-
-cd build-$BRANCH
-bitbake $IMAGE
+source oe-init-build-env build-$BRANCH
+bitbake $TARGET
 ```
 
