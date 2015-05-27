@@ -1,6 +1,5 @@
 #! /bin/sh
 
-mkdir -p $MVMS
 mkdir -p $BOOT
 mkdir -p $ROOTFS
 

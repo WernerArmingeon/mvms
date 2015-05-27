@@ -23,9 +23,8 @@ checkout repositories ( poky, meta-openembedded, meta-atmel ) to $BRANCH
 ```
 cd /data
 git clone https://github.com/WernerArmingeon/mvms.git
-cd mvms
 
-. bin/setup
+. mvms/bin/setup
 
 bin/getyocto
 
