@@ -8,25 +8,27 @@ cd $MVMS
 
 git clone git://git.yoctoproject.org/poky
 cd poky
-git checkout dizzy -b $BRANCH
+git checkout dizzy
+git checkout -b $BRANCH
 
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
-git checkout origin/dizzy -b $BRANCH
+git checkout origin/dizzy
+git checkout -b $BRANCH
 cd ..
 
 # git clone git://github.com/meta-qt5/meta-qt5.git
 # cd meta-qt5
-# git checkout origin/master -b $BRANCH
+# git checkout origin/master
+# git checkout -b $BRANCH
 # cd ..
 
 git clone git://github.com/linux4sam/meta-atmel.git meta-atmel
 cd meta-atmel
-git checkout origin/dizzy -b $BRANCH
+git checkout origin/dizzy
+git checkout -b $BRANCH
 cd ..
 
-set >vars-before
-source oe-init-build-env build-$BRANCH
-set >vars-after
+echo # source oe-init-build-env build-$BRANCH
 
 echo # bitbake $IMAGE
