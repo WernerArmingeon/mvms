@@ -1,0 +1,23 @@
+#! /bin/sh
+
+source `dirname $0`/setup
+
+$BRANCH=$1
+
+git checkout $BRANCH
+
+cd meta-openembedded
+git checkout $BRANCH
+cd ..
+
+# cd meta-qt5
+# git checkout $BRANCH
+# cd ..
+
+cd meta-atmel
+git checkout $BRANCH
+cd ..
+
+cd build-$BRANCH
+
+echo $BRANCH >$MVMS/config/branch

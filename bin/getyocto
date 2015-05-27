@@ -1,0 +1,39 @@
+#! /bin/sh
+
+source `dirname $0`/setup
+
+mkdir -p $MVMS
+mkdir -p $BOOT
+mkdir -p $ROOTFS
+
+mkdir -p $MVMS/config
+
+BRANCH=mvms-d3
+IMAGE=core-image-minimal
+
+cd $MVMS
+
+git clone git://git.yoctoproject.org/poky
+cd poky
+git checkout dizzy -b $BRANCH
+
+git clone git://git.openembedded.org/meta-openembedded
+cd meta-openembedded
+git checkout origin/dizzy -b $BRANCH
+cd ..
+
+# git clone git://github.com/meta-qt5/meta-qt5.git
+# cd meta-qt5
+# git checkout origin/master -b $BRANCH
+# cd ..
+
+git clone git://github.com/linux4sam/meta-atmel.git meta-atmel
+cd meta-atmel
+git checkout origin/dizzy -b $BRANCH
+cd ..
+
+echo # source oe-init-build-env build-$BRANCH
+echo # bitbake $IMAGE
+
+echo $BRANCH >$MVMS/config/branch
+echo $IMAGE  >$MVMS/config/image

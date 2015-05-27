@@ -1,0 +1,7 @@
+#! /bin/sh
+
+export MVMS=/data/mvms
+
+export POKY=$MVMS/poky
+export BOOT=$MVMS/boot
+export ROOTFS=$MVMS/root
