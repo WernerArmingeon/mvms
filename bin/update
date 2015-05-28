@@ -1,0 +1,17 @@
+#! /bin/sh
+
+BUILDDIR=$POKY/build-$BRANCH
+IMAGES=$BUILDDIR/tmp/deploy/images/sama5d3xek
+
+mkdir -p $MVMS/$BRANCH/boot
+cp $IMAGES/zImage                $MVMS/$BRANCH/boot/sama5d3ek.bin
+cp $IMAGES/zImage-sama5d35ek.dtb $MVMS/$BRANCH/boot/sama5d3ek.dtb
+
+VERSION=1.0-r0
+SRCROOTFS=$BUILDDIR/tmp/work/sama5d3xek-poky-linux-gnueabi/$TARGET/$VERSION/rootfs
+
+ROOTFS=$MVMS/$BRANCH/rootfs
+sudo rm -rf $ROOTFS
+cp -ai $SRCROOTFS $ROOTFS
+
+sudo chown -R root.root $ROOTFS

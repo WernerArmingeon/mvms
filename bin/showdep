@@ -1,0 +1,1 @@
+bitbake -g $1 -u depexp
