@@ -5,6 +5,10 @@ mkdir -p $ROOTFS
 
 cd $MVMS
 
+mkdir $MVMS/config
+echo $BRANCH >$MVMS/config/branch
+echo $TARGET >$MVMS/config/target
+
 git clone git://git.yoctoproject.org/poky
 cd poky
 git checkout dizzy

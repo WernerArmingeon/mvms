@@ -4,6 +4,11 @@ export MVMS=/data/mvms
 export POKY=$MVMS/poky
 
 export BRANCH=mvms-d3
-export TARGET=core-image-minimal
+# export TARGET=core-image-minimal
+export TARGET=atmel-qt5-demo-image
+
+echo "  "BRANCH = $BRANCH
+echo "  "TARGET = $TARGET
 
 cd $MVMS
+

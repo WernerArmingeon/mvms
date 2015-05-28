@@ -1,0 +1,4 @@
+#! /bin/sh
+
+STEM=`basename $1 .c`
+/usr/bin/arm-linux-gnueabi-gcc $STEM.c -o $STEM

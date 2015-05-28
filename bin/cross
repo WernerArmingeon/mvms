@@ -1,0 +1,6 @@
+#! /bin/sh
+
+export __ARM_PCS_VFP=1
+CC=/data/mvms/poky/build-mvms-d3/tmp/sysroots/x86_64-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-gcc
+STEM=`basename $1 .c`
+$CC -D__ARM_PCS_VFP=1 $STEM.c -o $STEM
